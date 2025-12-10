@@ -104,10 +104,64 @@ for (let r = 1; r < table.length; r++) {
 }
 
 console.log("Array of objects built from table:", people);
-// expected output:
-//   [
-//     { id: '42', name: 'Bruce', occupation: 'Knight', age: '41' },
-//     { id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19' },
-//     { id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58' },
-//     { id: '98', name: 'Bill', occupation: "Doctor's Assistant", age: '26' }
-//   ]
+//  output:
+
+// ]
+// Array of objects built from table: [
+//   { id: '42', name: 'Bruce', occupation: 'Knight', age: '41' },
+//   { id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19' },
+//   { id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58' },
+//   {
+//     id: '98',
+//     name: 'Bill',
+//     occupation: "Doctor's Assistant",
+//     age: '26'
+//   }
+// ]
+
+// ------------------------
+// Part 4: Manipulate array of objects and compute average age
+// ------------------------
+
+// 1) Remove the last element
+people.pop();
+
+// 2) Insert Barry at index 1
+people.splice(1, 0, {
+  id: "48",
+  name: "Barry",
+  occupation: "Runner",
+  age: "25",
+});
+
+// 3) Append Bilbo at the end
+people.push({
+  id: "7",
+  name: "Bilbo",
+  occupation: "None",
+  age: "111",
+});
+
+console.log("People after pop, splice, and push:", people);
+
+// 4) Compute average age using a loop (no reduce)
+let totalAge = 0;
+
+for (let i = 0; i < people.length; i++) {
+  const person = people[i];
+  totalAge += Number(person.age);
+}
+
+const averageAge = totalAge / people.length;
+console.log("Average age:", averageAge);
+
+// output
+// People after pop, splice, and push: [
+//   { id: '42', name: 'Bruce', occupation: 'Knight', age: '41' },
+//   { id: '48', name: 'Barry', occupation: 'Runner', age: '25' },
+//   { id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19' },
+//   { id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58' },
+//   { id: '98', name: 'Bill', occupation: "Doctor's Assistant", age: '26' },
+//   { id: '7', name: 'Bilbo', occupation: 'None', age: '111' }
+// ]
+// Average age: 53.5
