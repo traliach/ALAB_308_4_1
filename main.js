@@ -42,4 +42,11 @@ if (currentCell !== "" || currentRow.length > 0) {
 console.log("Rows array from CSV:", rows);
 
 //result:
-//Rows array from CSV: [ [ '42', 'Bruce', 'Knight', '41' ], [ '57', 'Bob', 'Fry Cook', '19' ], [ '63', 'Blaine', 'Quiz Master', '58' ], [ '98', 'Bill', "Doctor's Assistant", '26' ] ]
+//  node main.js 
+// Rows array from CSV: [
+//   [ 'ID', 'Name', 'Occupation', 'Age' ],
+//   [ '42', 'Bruce', 'Knight', '41' ],
+//   [ '57', 'Bob', 'Fry Cook', '19' ],
+//   [ '63', 'Blaine', 'Quiz Master', '58' ],
+//   [ '98', 'Bill', "Doctor's Assistant", '26' ]
+
