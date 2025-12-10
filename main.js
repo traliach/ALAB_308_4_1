@@ -165,3 +165,39 @@ console.log("Average age:", averageAge);
 //   { id: '7', name: 'Bilbo', occupation: 'None', age: '111' }
 // ]
 // Average age: 53.5
+
+// ------------------------
+// Part 5: Convert final array of objects back to CSV
+// ------------------------
+
+// Use the keys from the first object as the header row (already lowercase from Part 3)
+const keys = Object.keys(people[0]);
+
+// Start with the header line
+const lines = [];
+lines.push(keys.join(","));
+
+// Add one CSV line per person
+for (let i = 0; i < people.length; i++) {
+  const personRow = [];
+
+  for (let k = 0; k < keys.length; k++) {
+    const key = keys[k];
+    personRow.push(people[i][key]);
+  }
+
+  lines.push(personRow.join(","));
+}
+
+const csvOut = lines.join("\n");
+console.log("Final CSV output:\n" + csvOut);
+
+// output:
+// Final CSV output:
+// id,name,occupation,age
+// 42,Bruce,Knight,41
+// 48,Barry,Runner,25
+// 57,Bob,Fry Cook,19
+// 63,Blaine,Quiz Master,58
+// 98,Bill,Doctor's Assistant,26
+// 7,Bilbo,None,111
