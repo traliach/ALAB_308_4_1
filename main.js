@@ -39,16 +39,20 @@ if (currentCell !== "" || currentRow.length > 0) {
   rows.push(currentRow);
 }
 
-console.log("Rows array from CSV:", rows);
+console.table(rows);
 
 //output:
 //  node main.js 
-// Rows array from CSV: [
-//   [ 'ID', 'Name', 'Occupation', 'Age' ],
-//   [ '42', 'Bruce', 'Knight', '41' ],
-//   [ '57', 'Bob', 'Fry Cook', '19' ],
-//   [ '63', 'Blaine', 'Quiz Master', '58' ],
-//   [ '98', 'Bill', "Doctor's Assistant", '26' ]
+// ─────────┬──────┬──────────┬──────────────────────┬───────┐
+// │ (index) │ 0    │ 1        │ 2                    │ 3     │
+// ├─────────┼──────┼──────────┼──────────────────────┼───────┤
+// │ 0       │ 'ID' │ 'Name'   │ 'Occupation'         │ 'Age' │
+// │ 1       │ '42' │ 'Bruce'  │ 'Knight'             │ '41'  │
+// │ 2       │ '57' │ 'Bob'    │ 'Fry Cook'           │ '19'  │
+// │ 3       │ '63' │ 'Blaine' │ 'Quiz Master'        │ '58'  │
+// │ 4       │ '98' │ 'Bill'   │ "Doctor's Assistant" │ '26'  │
+// └─────────┴──────┴──────────┴──────────────────────┴───────┘
+
 
 // ------------------------
 // Part 2: Build 2D table with dynamic columns
@@ -68,15 +72,17 @@ for (let r = 0; r < rows.length; r++) {
   }
 }
 
-console.log("Table with headers and consistent columns:", table);
+console.table(table);
 // output:
-// [
-//   [ 'ID', 'Name', 'Occupation', 'Age' ],
-//   [ '42', 'Bruce', 'Knight', '41' ],
-//   [ '57', 'Bob', 'Fry Cook', '19' ],
-//   [ '63', 'Blaine', 'Quiz Master', '58' ],
-//   [ '98', 'Bill', "Doctor's Assistant", '26' ]
-// ]
+// ┌─────────┬──────┬──────────┬──────────────────────┬───────┐
+// │ (index) │ 0    │ 1        │ 2                    │ 3     │
+// ├─────────┼──────┼──────────┼──────────────────────┼───────┤
+// │ 0       │ 'ID' │ 'Name'   │ 'Occupation'         │ 'Age' │
+// │ 1       │ '42' │ 'Bruce'  │ 'Knight'             │ '41'  │
+// │ 2       │ '57' │ 'Bob'    │ 'Fry Cook'           │ '19'  │
+// │ 3       │ '63' │ 'Blaine' │ 'Quiz Master'        │ '58'  │
+// │ 4       │ '98' │ 'Bill'   │ "Doctor's Assistant" │ '26'  │
+// └─────────┴──────┴──────────┴──────────────────────┴───────┘
 
 // ------------------------
 // Part 3: Transform rows into array of objects
@@ -103,21 +109,16 @@ for (let r = 1; r < table.length; r++) {
   people.push(person);
 }
 
-console.log("Array of objects built from table:", people);
+console.table(people);
 //  output:
-
-// ]
-// Array of objects built from table: [
-//   { id: '42', name: 'Bruce', occupation: 'Knight', age: '41' },
-//   { id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19' },
-//   { id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58' },
-//   {
-//     id: '98',
-//     name: 'Bill',
-//     occupation: "Doctor's Assistant",
-//     age: '26'
-//   }
-// ]
+// ┌─────────┬──────┬──────────┬──────────────────────┬───────┐
+// │ (index) │ id   │ name     │ occupation           │ age   │
+// ├─────────┼──────┼──────────┼──────────────────────┼───────┤
+// │ 0       │ '42' │ 'Bruce'  │ 'Knight'             │ '41'  │
+// │ 1       │ '57' │ 'Bob'    │ 'Fry Cook'           │ '19'  │
+// │ 2       │ '63' │ 'Blaine' │ 'Quiz Master'        │ '58'  │
+// │ 3       │ '98' │ 'Bill'   │ "Doctor's Assistant" │ '26'  │
+// └─────────┴──────┴──────────┴──────────────────────┴───────┘
 
 // ------------------------
 // Part 4: Manipulate array of objects and compute average age
@@ -142,7 +143,7 @@ people.push({
   age: "111",
 });
 
-console.log("People after pop, splice, and push:", people);
+console.table(people);
 
 // 4) Compute average age using a loop (no reduce)
 let totalAge = 0;
@@ -161,10 +162,9 @@ console.log("Average age:", averageAge);
 //   { id: '48', name: 'Barry', occupation: 'Runner', age: '25' },
 //   { id: '57', name: 'Bob', occupation: 'Fry Cook', age: '19' },
 //   { id: '63', name: 'Blaine', occupation: 'Quiz Master', age: '58' },
-//   { id: '98', name: 'Bill', occupation: "Doctor's Assistant", age: '26' },
 //   { id: '7', name: 'Bilbo', occupation: 'None', age: '111' }
 // ]
-// Average age: 53.5
+// Average age: 50.8
 
 // ------------------------
 // Part 5: Convert final array of objects back to CSV
@@ -199,5 +199,4 @@ console.log("Final CSV output:\n" + csvOut);
 // 48,Barry,Runner,25
 // 57,Bob,Fry Cook,19
 // 63,Blaine,Quiz Master,58
-// 98,Bill,Doctor's Assistant,26
 // 7,Bilbo,None,111
