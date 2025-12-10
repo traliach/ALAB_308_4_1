@@ -1,6 +1,6 @@
-## ALAB 308.4.1 – Working with Data Collections (JS)
+## ALAB 308.4.1
 
-lab to practice working with CSV data using arrays and objects.
+A lab to practice working with CSV data using arrays and objects.
 
 
 ### What the code does
@@ -11,4 +11,14 @@ lab to practice working with CSV data using arrays and objects.
 - **Part 4**: Change the `people` list (remove last, add Barry and Bilbo) and calculate the average age with a loop.
 - **Part 5**: Turn the final `people` array back into a CSV string and print it.
 
+### Ressousces
+
+MDN Web Docs – for loops in JavaScript
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
+
+W3Schools – JavaScript Arrays
+https://www.w3schools.com/js/js_arrays.asp
+
+W3Schools – JavaScript For Loop
+https://www.w3schools.com/js/js_loop_for.asp
 
